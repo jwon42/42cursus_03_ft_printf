@@ -1,22 +1,31 @@
-##  :notebook_with_decorative_cover: 42 cursus (2020/02/24~)
+## :notebook_with_decorative_cover: ft_printf
 
-| Circle | Order | Project                                                      | Language |                          Test tool                           |       Status       |    Score    | Pass date  |  Level   |
-| :----: | :---: | :----------------------------------------------------------- | :------: | :----------------------------------------------------------: | :----------------: | :---------: | :--------: | :------: |
-|   01   |  01   | [**Libft**](https://github.com/jwon42/42cursus/tree/master/01_Libft) |    C     |                                                              | :heavy_check_mark: | **115**/100 | 2020-04-16 |   1.03   |
-|   02   |  02   | [**get_next_line**](https://github.com/jwon42/42cursus/tree/master/02_get_next_line) |    C     | [:link:](https://github.com/jwon42/42cursus/tree/master/02_get_next_line#link-test-tools-links) | :heavy_check_mark: | **115**/100 | 2020-04-17 |   1.48   |
-|        |  03   | [**ft_printf**](https://github.com/jwon42/42cursus/tree/master/03_ft_printf) |    C     | [:link:](https://github.com/jwon42/42cursus/tree/master/03_ft_printf#link-test-tools-links) | :heavy_check_mark: | **100**/100 | 2020-05-04 |   1.88   |
-|        |  04   | **netwhat**                                                  |   n/a    |                                                              | :heavy_check_mark: | **100**/100 | 2020-05-05 |   2.03   |
-|   03   |  05   | [**ft_server**](https://github.com/jwon42/42cursus/tree/master/05_ft_server) |  Docker  |                                                              | :heavy_check_mark: | **100**/100 | 2020-05-07 |   2.30   |
-|        |  06   | [**Exam Rank 02**](https://github.com/jwon42/42cursus/tree/master/06_exam_rank_02) |    C     |                                                              | :heavy_check_mark: | **100**/100 | 2020-06-02 |   2.30   |
-|        |  07   | [**cub3d**](https://github.com/jwon42/42cursus/tree/master/07_cub3d) |    C     |                                                              | :heavy_check_mark: | **113**/100 | 2020-08-05 | **3.16** |
-|        |       | ~~**miniRT**~~                                               |          |                                                              |                    |             |            |          |
-|   04   |       | **ft_services**                                              |          |                                                              |                    |             |            |          |
-|        |       | **libasm**                                                   |          |                                                              |                    |             |            |          |
-|        |       | **minishell**                                                |          |                                                              |                    |             |            |          |
-|        |       | **Exam Rank 03**                                             |          |                                                              |                    |             |            |          |
-|        |       |                                                              |          |                                                              |                    |             |            |          |
+#### :page_facing_up: Prototype
 
-## :camera: Intra Profile
+- ```c
+  int	ft_printf(const char *str, ...);
+  ```
 
-https://profile.intra.42.fr/users/jwon
+#### :page_facing_up: Description
 
+- **Write a library that contains ft_printf, a function that will mimic the real printf**.
+- It must not do the buﬀer management like the real printf.
+- It will manage the following conversions: **cspdiuxX%**.
+- It will manage any combination of the following ﬂags: **’-0.*’ and minimum ﬁeld width with all conversions**.
+
+#### :page_facing_up: Return value
+
+- Upon successful return, these functions return the number of characters printed.
+- `-1` : If an output error is encountered.
+
+
+
+------
+
+#### :link: Test Tools Links
+
+- [**42TESTERS-PRINTF** by Mazoise](https://github.com/Mazoise/42TESTERS-PRINTF)
+
+- [**PFT_2019** by YulonSil](https://github.com/cclaude42/PFT_2019)
+
+- [**printf_lover-v2** by charMstr](https://github.com/charMstr/printf_lover_v2)
