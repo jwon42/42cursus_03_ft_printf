@@ -6,7 +6,7 @@
 /*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 12:45:57 by jwon              #+#    #+#             */
-/*   Updated: 2020/05/03 12:24:05 by jwon             ###   ########.fr       */
+/*   Updated: 2020/12/04 15:26:13 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,28 +33,42 @@ typedef struct	s_info
 	int			printed_len;
 }				t_info;
 
+/*
+** ft_printf.c
+*/
+void			init_info(t_info *info);
+int				ft_printf(const char *str, ...);
+
+/*
+** parse.c
+*/
+void			parse_hub(va_list ap, char *str, t_info *info);
+
+/*
+** print.c
+*/
+void			print_hub(va_list ap, t_info *info);
+
+/*
+** print_sub.c
+*/
+void			print_space_diuxp(t_info *info, long long data);
+void			print_zero_diuxp(t_info *info, long long data);
+void			print_space_sc(t_info *info);
+void			print_zero_sc(t_info *info);
+
+/*
+** print_utils.c
+*/
 void			ft_putchar(char c, t_info *info);
 void			ft_putstr(char *s, t_info *info);
 void			ft_putnbr_base(long long n, char *base, t_info *info);
 int				ft_strlen(char *str, t_info *info);
 int				ft_nbrlen_base(long long n, char *base, t_info *info);
 
-void			parse_flags(char **str, t_info *info);
-void			parse_width(va_list ap, char **str, t_info *info);
-void			parse_precision(va_list ap, char **str, t_info *info);
-void			parse_specifier(char **str, t_info *info);
 
-void			print_hub(va_list ap, t_info *info);
-void			print_diuxp(va_list ap, t_info *info);
-void			print_sc(va_list ap, t_info *info);
 
-void			print_space_diuxp(t_info *info, long long data);
-void			print_zero_diuxp(t_info *info, long long data);
-void			print_space_sc(t_info *info);
-void			print_zero_sc(t_info *info);
 
-void			init_info(t_info *info);
-void			control_center(va_list ap, char *str, t_info *info);
-int				ft_printf(const char *str, ...);
+
 
 #endif

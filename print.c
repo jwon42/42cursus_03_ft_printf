@@ -6,22 +6,13 @@
 /*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 12:46:01 by jwon              #+#    #+#             */
-/*   Updated: 2020/05/03 13:17:23 by jwon             ###   ########.fr       */
+/*   Updated: 2020/12/04 15:23:05 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		print_hub(va_list ap, t_info *info)
-{
-	if (info->spec == 'd' || info->spec == 'i' || info->spec == 'u' ||
-		info->spec == 'x' || info->spec == 'X' || info->spec == 'p')
-		print_diuxp(ap, info);
-	else if (info->spec == 's' || info->spec == 'c' || info->spec == '%')
-		print_sc(ap, info);
-}
-
-void		print_diuxp(va_list ap, t_info *info)
+static void		print_diuxp(va_list ap, t_info *info)
 {
 	char			*base;
 	long long		data;
@@ -49,7 +40,7 @@ void		print_diuxp(va_list ap, t_info *info)
 	info->align == 1 ? print_space_diuxp(info, data) : 0;
 }
 
-void		print_sc(va_list ap, t_info *info)
+static void		print_sc(va_list ap, t_info *info)
 {
 	char			*data_s;
 	int				data_c;
@@ -68,4 +59,13 @@ void		print_sc(va_list ap, t_info *info)
 	print_zero_sc(info);
 	info->spec == 's' ? ft_putstr(data_s, info) : ft_putchar(data_c, info);
 	info->align == 1 ? print_space_sc(info) : 0;
+}
+
+void			print_hub(va_list ap, t_info *info)
+{
+	if (info->spec == 'd' || info->spec == 'i' || info->spec == 'u' ||
+		info->spec == 'x' || info->spec == 'X' || info->spec == 'p')
+		print_diuxp(ap, info);
+	else if (info->spec == 's' || info->spec == 'c' || info->spec == '%')
+		print_sc(ap, info);
 }

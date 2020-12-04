@@ -6,13 +6,13 @@
 /*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 12:45:46 by jwon              #+#    #+#             */
-/*   Updated: 2020/05/03 03:33:51 by jwon             ###   ########.fr       */
+/*   Updated: 2020/12/04 15:30:12 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		parse_flags(char **str, t_info *info)
+static void		parse_flags(char **str, t_info *info)
 {
 	while (**str == '-' || **str == '0')
 	{
@@ -26,7 +26,7 @@ void		parse_flags(char **str, t_info *info)
 		info->zero = 0;
 }
 
-void		parse_width(va_list ap, char **str, t_info *info)
+static void		parse_width(va_list ap, char **str, t_info *info)
 {
 	if (**str == '*')
 	{
@@ -47,7 +47,7 @@ void		parse_width(va_list ap, char **str, t_info *info)
 	}
 }
 
-void		parse_precision(va_list ap, char **str, t_info *info)
+static void		parse_precision(va_list ap, char **str, t_info *info)
 {
 	if (**str == '.')
 	{
@@ -71,7 +71,7 @@ void		parse_precision(va_list ap, char **str, t_info *info)
 	}
 }
 
-void		parse_specifier(char **str, t_info *info)
+static void		parse_specifier(char **str, t_info *info)
 {
 	if (**str == 'c' || **str == 's' || **str == 'p' || **str == 'd' ||
 		**str == 'i' || **str == 'u' || **str == 'x' || **str == 'X' ||
@@ -80,4 +80,23 @@ void		parse_specifier(char **str, t_info *info)
 	else
 		return ;
 	(*str)++;
+}
+
+void			parse_hub(va_list ap, char *str, t_info *info)
+{
+	while (*str)
+	{
+		if (*str == '%')
+		{
+			++str;
+			parse_flags(&str, info);
+			parse_width(ap, &str, info);
+			parse_precision(ap, &str, info);
+			parse_specifier(&str, info);
+			print_hub(ap, info);
+			init_info(info);
+		}
+		else
+			ft_putchar(*(str)++, info);
+	}
 }
