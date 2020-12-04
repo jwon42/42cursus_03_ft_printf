@@ -6,7 +6,7 @@
 /*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 12:45:57 by jwon              #+#    #+#             */
-/*   Updated: 2020/12/04 15:26:13 by jwon             ###   ########.fr       */
+/*   Updated: 2020/12/04 15:33:38 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,5 @@ void			ft_putstr(char *s, t_info *info);
 void			ft_putnbr_base(long long n, char *base, t_info *info);
 int				ft_strlen(char *str, t_info *info);
 int				ft_nbrlen_base(long long n, char *base, t_info *info);
-
-
-
-
-
 
 #endif
