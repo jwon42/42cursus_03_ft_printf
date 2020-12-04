@@ -6,7 +6,7 @@
 /*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 12:45:57 by jwon              #+#    #+#             */
-/*   Updated: 2020/12/04 15:33:38 by jwon             ###   ########.fr       */
+/*   Updated: 2020/12/04 16:48:17 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,9 @@ void			print_hub(va_list ap, t_info *info);
 /*
 ** print_sub.c
 */
-void			print_space_diuxp(t_info *info, long long data);
-void			print_zero_diuxp(t_info *info, long long data);
 void			print_space_sc(t_info *info);
-void			print_zero_sc(t_info *info);
+void			print_space_diuxp(t_info *info, long long data);
+void			print_zero(t_info *info, long long data);
 
 /*
 ** print_utils.c

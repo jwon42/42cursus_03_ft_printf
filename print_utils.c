@@ -6,7 +6,7 @@
 /*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 14:06:25 by jwon              #+#    #+#             */
-/*   Updated: 2020/12/04 15:30:44 by jwon             ###   ########.fr       */
+/*   Updated: 2020/12/04 16:04:25 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void		ft_putstr(char *s, t_info *info)
 {
 	int			idx;
 
-	if (!s ||(info->spec == 's' && info->dot && !info->prec))
+	if (!s || (info->spec == 's' && info->dot && !info->prec))
 		return ;
 	idx = 0;
 	if (info->spec == 's' && info->prec)

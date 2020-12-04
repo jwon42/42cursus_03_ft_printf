@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_diuxpsc.c                                    :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 12:46:01 by jwon              #+#    #+#             */
-/*   Updated: 2020/12/04 15:23:05 by jwon             ###   ########.fr       */
+/*   Updated: 2020/12/04 16:47:29 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void		print_diuxp(va_list ap, t_info *info)
 	info->align == 0 ? print_space_diuxp(info, data) : 0;
 	data < 0 ? ft_putchar('-', info) : 0;
 	info->spec == 'p' ? ft_putstr("0x", info) : 0;
-	print_zero_diuxp(info, data);
+	print_zero(info, data);
 	data < 0 ? ft_putnbr_base(-1 * data, base, info)
 		: ft_putnbr_base(data, base, info);
 	info->align == 1 ? print_space_diuxp(info, data) : 0;
@@ -56,7 +56,7 @@ static void		print_sc(va_list ap, t_info *info)
 	data_s = (data_s == NULL) ? "(null)" : data_s;
 	info->data_len = (info->spec == 's') ? ft_strlen(data_s, info) : 1;
 	info->align == 0 ? print_space_sc(info) : 0;
-	print_zero_sc(info);
+	print_zero(info, 0);
 	info->spec == 's' ? ft_putstr(data_s, info) : ft_putchar(data_c, info);
 	info->align == 1 ? print_space_sc(info) : 0;
 }
