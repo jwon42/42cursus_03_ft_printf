@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: jwon <jwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 12:45:46 by jwon              #+#    #+#             */
-/*   Updated: 2020/12/04 16:05:07 by jwon             ###   ########.fr       */
+/*   Updated: 2020/12/12 01:05:33 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void		parse_flags(char **str, t_info *info)
+static void		parse_flag(char **str, t_info *info)
 {
 	while (**str == '-' || **str == '0')
 	{
@@ -89,7 +89,7 @@ void			parse_hub(va_list ap, char *str, t_info *info)
 		if (*str == '%')
 		{
 			++str;
-			parse_flags(&str, info);
+			parse_flag(&str, info);
 			parse_width(ap, &str, info);
 			parse_precision(ap, &str, info);
 			parse_specifier(&str, info);
