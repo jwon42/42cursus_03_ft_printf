@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jwon <marvin@42.fr>                        +#+  +:+       +#+         #
+#    By: jwon <jwon@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/03 12:25:28 by jwon              #+#    #+#              #
-#    Updated: 2020/12/04 15:26:11 by jwon             ###   ########.fr        #
+#    Updated: 2020/12/11 18:32:08 by jwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,7 @@ NAME	= libftprintf.a
 SRCS	= ft_printf.c \
 		  parse.c \
 		  print.c \
-		  print_sub.c \
-		  print_utils.c
+		  utils.c
 
 OBJS	= ${SRCS:%.c=%.o}
 

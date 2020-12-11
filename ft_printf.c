@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: jwon <jwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 14:03:03 by jwon              #+#    #+#             */
-/*   Updated: 2020/12/04 15:41:57 by jwon             ###   ########.fr       */
+/*   Updated: 2020/12/11 18:29:15 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void			init_info(t_info *info)
 	info->prec = 0;
 	info->spec = 0;
 	info->data_len = 0;
+	info->space_len = 0;
+	info->zero_len = 0;
 }
 
 int				ft_printf(const char *str, ...)

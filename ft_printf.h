@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: jwon <jwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 12:45:57 by jwon              #+#    #+#             */
-/*   Updated: 2020/12/04 16:48:17 by jwon             ###   ########.fr       */
+/*   Updated: 2020/12/11 18:31:56 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef struct	s_info
 	int			prec;
 	int			spec;
 	int			data_len;
+	int			space_len;
+	int			zero_len;
 	int			printed_len;
 }				t_info;
 
@@ -50,14 +52,7 @@ void			parse_hub(va_list ap, char *str, t_info *info);
 void			print_hub(va_list ap, t_info *info);
 
 /*
-** print_sub.c
-*/
-void			print_space_sc(t_info *info);
-void			print_space_diuxp(t_info *info, long long data);
-void			print_zero(t_info *info, long long data);
-
-/*
-** print_utils.c
+** utils.c
 */
 void			ft_putchar(char c, t_info *info);
 void			ft_putstr(char *s, t_info *info);
